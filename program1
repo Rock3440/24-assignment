@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+class Student {
+    public:
+        string name;
+        int age;
+        double grade;
+};
+int main() {
+	int size=20;
+	char str[size];
+    Student student;
+    cout<<"student name: "<<endl;
+    //cin>>student.name;
+    cin.getline(str,size);
+    student.name=str;
+    cout<<"student age: "<<endl;
+    cin>>student.age;
+    student.age;
+    cout<<"student grade: "<<endl;
+    cin>>student.grade;
+    student.grade;
+    ofstream file("student.txt");
+    if (file.is_open()) {
+        file<<student.name<< " " <<student.age<<" "<<student.grade;
+        file.close();
+    }
+    else 
+    {
+        cout << "Unable to open file";
+    }
+
+    return 0;
+}
